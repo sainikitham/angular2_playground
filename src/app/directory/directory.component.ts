@@ -17,6 +17,10 @@ export class DirectoryComponent implements OnInit {
   logit(){
     this._LoggingService.log();
   }
+  // tslint:disable-next-line:one-line
+  fb_postdata(ninja, belt){
+    firebase.database().ref('/').push({name: ninja, belt: belt});
+  }
   ngOnInit() {
     // this._DataService.fetchdata().subscribe((data) => this.ninjas = data);
     this.fb_fetchdata();

@@ -11,4 +11,8 @@
     </div>
   </li>
 </ul>
-<button (click)="logit()">log</button>
+<form id="add-ninja">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="enter name">
+  <input type="text" [(ngModel)]="belt" name="belt" placeholder="enter belt color">
+  <button (click)="fb_postdata(name,belt)">add ninja</button>
+</form>
