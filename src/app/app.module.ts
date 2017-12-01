@@ -6,6 +6,9 @@ import { DirectoryComponent } from './directory/directory.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { LoggingService } from './logging.service';
+import { Http, HttpModule } from '@angular/http';
+import { DataService } from './data.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
@@ -22,14 +25,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [LoggingService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 
